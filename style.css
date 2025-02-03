@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    text-align: center;
+}
+.barre-navigation {
+    background-color: #0055a4;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.barre-navigation .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+.barre-navigation nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.barre-navigation nav ul li {
+    margin: 0 15px;
+}
+.barre-navigation nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+}
+.barre-navigation nav ul li a.actif {
+    font-weight: bold;
+}
+.barre-recherche {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.barre-recherche input {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 20px;
+    background-color: lightgray;
+}
+.en-vedette {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.offre {
+    display: flex;
+    justify-content: space-between;
+    background: lightgray;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 50px;
+    align-items: center;
+}
+.offre span {
+    background: #d3d3d3;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+.entreprise img {
+    width: 50px;
+    height: auto;
+}
+footer {
+    background: #0055a4;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+}
