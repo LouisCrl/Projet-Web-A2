@@ -11,16 +11,8 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="inter-black">TheGoodPlan</h1>
-        <nav>
-            <a class="inter-black navlink">Accueil</a>
-            <a class="inter-medium navlink">Nos Offres</a>
-            <a class="inter-medium navlink">Nos Candidats</a>
-        </nav>
-        <a href="compte.html"><img class="accountIcon" src="assets/accountIcon.png" width="48"></a>
-    </header>
-    <main>
+<?php include "header.html" ?>
+    <main class="explore">
         <aside id="panneau">
             <h3 class="inter-bold">Trier par</h3>
             <select>
@@ -44,6 +36,7 @@
         </aside>
         </div>
         <section class="offres">
+        <a href="details-offre.php">
             <div class="offre rouge">
                 <div class="offre-head">
                     <h2>Développeur FullStack H/F</h2>
@@ -58,12 +51,14 @@
                     <span class="exp fond-rouge"><img src="assets/educationIcon.png" width="24px">Bac +2</span>
                 </div>
             </div>
+</a>
+<a href="details-offre.php">
             <div class="offre jaune">
                 <div class="offre-head">
                     <h2>Développeur FullStack H/F</h2>
                     <span class="expand"></span>
                     <h3 class="inter-bold italic">McDonalds</h3>
-                    <img class="logo-jaune" src="assets/netflixIcon.png" width="48">
+                    <img class="logo-jaune" src="assets/mcdonaldsIcon.png" width="48">
                 </div>
                 <h5 class="inter-light sub">17 candidats ont postulé à cette offre • Publiée il y a 13 jours</h5>
                 <div class="tags">
@@ -72,12 +67,14 @@
                     <span class="exp fond-jaune"><img src="assets/educationIcon.png" width="24px">Bac +2</span>
                 </div>
             </div>
+</a>
+<a href="details-offre.php">
             <div class="offre vert">
                 <div class="offre-head">
                     <h2>Développeur FullStack H/F</h2>
                     <span class="expand"></span>
                     <h3 class="inter-bold italic">Spotify</h3>
-                    <img class="logo-vert" src="assets/netflixIcon.png" width="48">
+                    <img class="logo-vert" src="assets/spotifyIcon.webp" width="48">
                 </div>
                 <h5 class="inter-light sub">17 candidats ont postulé à cette offre • Publiée il y a 13 jours</h5>
                 <div class="tags">
@@ -86,9 +83,8 @@
                     <span class="exp fond-vert"><img src="assets/educationIcon.png" width="24px">Bac +2</span>
                 </div>
             </div>
+</a>
         </section>
     </main>
-    <footer>
-        2025 - Tout droits réservés
-    </footer>
+    <?php include "footer.html" ?>
 </body>

@@ -4,6 +4,7 @@ body {
     font-weight: 400;
     font-style: normal;
     margin: 0;
+    background-color: #f5f5f5;
 }
 
 .inter-thin {
@@ -80,7 +81,7 @@ header {
     background-color: #0056B8;
 }
 
-h1 {
+.titre {
     color: white;
     padding-left: 32px;
 }
@@ -103,8 +104,18 @@ nav {
     content: "";
 }
 
+.navlink {
+    text-decoration: none;
+    color: black;
+}
+
 .accountIcon {
     padding-right: 32px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 #panneau {
@@ -169,8 +180,11 @@ nav {
     justify-content: space-between;
 }
 
-.expand {
-    width: 250px;
+.offre-head-apercu {
+    display: flex;
+    align-items: center;
+    padding-right: 16px;
+    justify-content: space-evenly;
 }
 
 .logo-rouge {
@@ -196,9 +210,23 @@ nav {
     gap: 10px;
 }
 
+.contenu .tags {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .offre .tags span {
     align-items: center;
     font-size: 24px;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 16px;
+}
+
+.contenu .tags span {
+    align-items: center;
+    font-size: 28px;
     color: white;
     padding: 10px 20px;
     border-radius: 16px;
@@ -214,6 +242,10 @@ nav {
 
 .fond-vert {
     background-color: #00DA5A;
+}
+
+.fond-bleu {
+    background-color: #0056B8;
 }
 
 /* Colors for job cards */
@@ -235,8 +267,9 @@ nav {
     box-shadow: 4px 4px #00DA5A;
 }
 
-main {
+.explore {
     display: flex;
+    justify-content: center;
 }
 
 .aide {
@@ -245,6 +278,7 @@ main {
     align-items: center;
     color: white;
     background-color: #003879;
+    padding: 24px;
 }
 
 .grille {
@@ -254,7 +288,7 @@ main {
     gap: 24px;
 }
 
-article {
+.support {
     text-align: center;
     color: #0056B8;
     border: 4px solid #0056B8;
@@ -268,4 +302,185 @@ footer {
     align-items: center;
     background-color: #0056B8;
     color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.accueil {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.barre-navigation {
+    background-color: #0055a4;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barre-navigation .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.barre-navigation nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.barre-navigation nav ul li {
+    margin: 0 15px;
+}
+
+.barre-navigation nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+}
+
+.barre-navigation nav ul li a.actif {
+    font-weight: bold;
+}
+
+.barre-recherche {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.barre-recherche input {
+    padding: 10px;
+    height: 20px;
+    width: 350px;
+    border: none;
+    border-radius: 20px;
+    background-color: lightgray;
+}
+
+.en-vedette {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    width: 60%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cadre {
+    background: white;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #004aad;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.blue-link {
+    color: #004aad;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #004aad;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003488;
+}
+
+.details-offre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenu {
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    padding: 20px;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.infos-offre {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+}
+
+.infos-offre img {
+    width: 100px;
+}
+
+.details {
+    background-color: #e0e0e0;
+    border-radius: 50px;
+    padding: 16px;
+    margin: 20px;
+    width: 50%;
+    align-items: center;
+}
+
+.details div {
+    flex: 1;
+    text-align: center;
+}
+
+.details div:not(:last-child) {
+    border-right: 1px solid gray;
 }

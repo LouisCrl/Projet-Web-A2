@@ -11,15 +11,7 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="inter-black">TheGoodPlan</h1>
-        <nav>
-            <a class="inter-black navlink">Accueil</a>
-            <a class="inter-medium navlink">Nos Offres</a>
-            <a class="inter-medium navlink">Nos Candidats</a>
-        </nav>
-        <a href="compte.html"><img class="accountIcon" src="assets/accountIcon.png" width="48"></a>
-    </header>
+<?php include "header.html" ?>
     <section class="aide">
         <div>
             Bonjour
@@ -28,17 +20,15 @@
         </div>
     </section>
     <main class="grille">
-        <article>
+        <article class="support">
             <h2>Général</h2>
         </article>
-        <article>
+        <article class="support">
             <h2>Candidats</h2>
         </article>
-        <article>
+        <article class="support">
             <h2>Recruteurs</h2>
         </article>
     </main>
-    <footer>
-        2025 - Tout droits réservés
-    </footer>
+    <?php include "footer.html" ?>
 </body>
