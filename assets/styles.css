@@ -154,6 +154,7 @@ a {
 
 .offres {
     padding-top: 16px;
+    padding-bottom: 16px;
     display: grid;
     gap: 20px;
 }
@@ -178,6 +179,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 16px;
 }
 
 .offre-head-apercu {
@@ -185,6 +187,10 @@ a {
     align-items: center;
     padding-right: 16px;
     justify-content: space-evenly;
+}
+
+.expand {
+    width: 200px;
 }
 
 .logo-rouge {
@@ -269,7 +275,8 @@ a {
 
 .explore {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+
 }
 
 .aide {
