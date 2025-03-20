@@ -6,7 +6,7 @@ use App\Models\UserModel;
 class UserController extends Controller{
 
     public function __construct($templateEngine) {
-        $this->model = new TaskModel();
+        $this->model = new UserModel();
         $this->templateEngine = $templateEngine;
     }
 
@@ -22,17 +22,14 @@ class UserController extends Controller{
         exit();
     }
 
-    public function updateUser($id,$lastname, $firstname, $mail, $password, $phone, $cv, $letter, $status){
+    public function updateUser($id,$lastname, $firstname, $password, $mail, $status){
         $id=$_POST["id"];
         $lastname=$_POST["lastname"];
         $firstname=$_POST["firstname"];
-        $mail=$_POST["mail"];
         $password=$_POST["password"];
-        $phone=$_POST["phone"];
-        $cv=$_POST["cv"];
-        $letter=$_POST["letter"];
+        $mail=$_POST["mail"];
         $status=$_POST["status"];
-        $this->model->updateUser($id, $lastname, $firstname, $mail, $password, $phone, $cv, $letter, $status);
+        $this->model->updateUser($id,$lastname, $firstname, $password, $mail, $status);
         header('Location: /');
         exit();
     }

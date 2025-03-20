@@ -1,10 +1,12 @@
 <?php
 namespace App\Models;
+require_once 'src/Models/Model.php';
+
 
 class UserModel extends Model{
     public function __construct($connection = null) {
         if(is_null($connection)) {
-            $this->connection = new FileDatabase('users', ['lastname', 'firstname','mail','password','phone','cv','letter','status']);
+            $this->connection = new FileDatabase('USERS', ['LASTNAME', 'FIRSTNAME','PASSWORD','MAIL','ID_ROLE']);
         } else {
             $this->connection = $connection;
         }
@@ -15,7 +17,7 @@ class UserModel extends Model{
     }
 
     public function getUser($id) {
-        return $this->connection.getRecord($id);
+        return $this->connection->getRecord($id);
     }
 
     public function addUser($mail,$password) {
@@ -33,15 +35,12 @@ class UserModel extends Model{
         return $this->connection->insertRecord($record);
     }
 
-    public function updateUser($id,$lastname,$firstname,$mail,$password,$phone,$cv,$letter,$status) {
+    public function updateUser($id,$lastname,$firstname,$password,$mail,$status) {
         $record = [
             'lastname' => $lastname,
             'firstname' => $firstname,
-            'mail' => $mail,
             'password' => $password,
-            'phone' => $phone,
-            'cv' => $cv,
-            'letter' => $letter,
+            'mail' => $mail,
             'status' => $status
         ];
 
