@@ -1,10 +1,11 @@
 <?php
 namespace App\Models;
+require_once 'src/Models/Model.php';
 
 class OfferModel extends Model {
     public function __construct($connection = null) {
         if (is_null($connection)) {
-            $this->connection = new FileDatabase('offers', ['name', 'location', 'duration', 'studylevel', 'description', 'date', 'remuneration']);
+            $this->connection = new FileDatabase('OFFERS', ['ID', 'TITLE', 'RELEASE_DATE', 'CITY', 'GRADE', 'BEGIN_DATE', 'DURATION', 'RENUMBER', 'DESCRIPTION', 'ID_COMPANY']);
         } else {
             $this->connection = $connection;
         }
@@ -18,29 +19,33 @@ class OfferModel extends Model {
         return $this->connection->getRecord($id);
     }
 
-    public function createOffer($name, $location, $duration, $studylevel, $description, $date, $remuneration) {
+    public function createOffer($title, $release_date, $city, $grade, $begin_date, $duration, $renumber, $description, $id_company) {
         $record = [
-            'name' => $name,
-            'location' => $location,
-            'duration' => $duration,
-            'studylevel' => $studylevel,
-            'description' => $description,
-            'date' => $date,
-            'remuneration' => $remuneration
+            'TITLE' => $title,
+            'RELEASE_DATE' => $release_date,
+            'CITY' => $city,
+            'GRADE' => $grade,
+            'BEGIN_DATE' => $begin_date,
+            'DURATION' => $duration,
+            'RENUMBER' => $renumber,
+            'DESCRIPTION' => $description,
+            'ID_COMPANY' => $id_company
         ];
 
         return $this->connection->insertRecord($record);
     }
 
-    public function updateOffer($id, $name, $location, $duration, $studylevel, $description, $date, $remuneration) {
+    public function updateOffer($id, $title, $release_date, $city, $grade, $begin_date, $duration, $renumber, $description, $id_company) {
         $record = [
-            'name' => $name,
-            'location' => $location,
-            'duration' => $duration,
-            'studylevel' => $studylevel,
-            'description' => $description,
-            'date' => $date,
-            'remuneration' => $remuneration
+            'TITLE' => $title,
+            'RELEASE_DATE' => $release_date,
+            'CITY' => $city,
+            'GRADE' => $grade,
+            'BEGIN_DATE' => $begin_date,
+            'DURATION' => $duration,
+            'RENUMBER' => $renumber,
+            'DESCRIPTION' => $description,
+            'ID_COMPANY' => $id_company
         ];
 
         return $this->connection->updateRecord($id, $record);
