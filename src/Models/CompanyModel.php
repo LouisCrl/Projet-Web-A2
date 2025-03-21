@@ -1,13 +1,13 @@
 <?php
-namespace App\Model;
+namespace App\Models;
 
 require_once 'FileDatabase.php';
 require_once 'Database.php';
-use App\Model\FileDatabase;
+use App\Models\FileDatabase;
 
 class CompanyModel extends Model{
 
-    public function __construct($db){
+    public function __construct($db=NULL){
         if (is_null($db)){
             $this->connection = new FileDatabase('../../.csv/TestCOMPANIES', ['Name', 'Description', 'Mail', 'Phone']);
         }else{
@@ -47,18 +47,9 @@ class CompanyModel extends Model{
         $this->connection->updateRecord($id, $comp);
     }
 
-    public function addTask($task) {
-        // Create a new record with the task and the status 'todo' (by default)
-        $record = ['task' => $task, 'status' => self::TODO_STATUS];
-
-        // TODO: Call the insertRecord method of the connection property and return the result
-        $result = $this->connection->insertRecord($record);
-
-        return $result;
-    }
     public function createCompany($name){
         $comp = [
-            'NAME' => $task,
+            'NAME' => $name,
             'DESCRIPTION' => '',
             'MAIL' => '',
             'PHONE' => '',
@@ -67,5 +58,6 @@ class CompanyModel extends Model{
     }
 
     public function deleteCompany($id){
+        return $this->connection->deleteRecord($id);
     }
 }
