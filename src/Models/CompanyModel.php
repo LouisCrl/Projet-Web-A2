@@ -7,7 +7,7 @@ use App\Models\FileDatabase;
 
 class CompanyModel extends Model{
 
-    public function __construct($db){
+    public function __construct($db=NULL){
         if (is_null($db)){
             $this->connection = new FileDatabase('../../.csv/TestCOMPANIES', ['Name', 'Description', 'Mail', 'Phone']);
         }else{
