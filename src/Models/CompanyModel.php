@@ -9,7 +9,7 @@ class CompanyModel extends Model{
 
     public function __construct($db){
         if (is_null($db)){
-            $this->connection = new FileDatabase(__DIR__.'/../../.csv/TestCOMPANIES', ['Name', 'Description', 'Mail', 'Phone']);
+            $this->connection = new FileDatabase('../../.csv/TestCOMPANIES', ['Name', 'Description', 'Mail', 'Phone']);
         }else{
             $this->connection = new FileDatabase($db, ['Name', 'Description', 'Mail', 'Phone']);
         }
@@ -58,5 +58,6 @@ class CompanyModel extends Model{
     }
 
     public function deleteCompany($id){
+        return $this->connection->deleteRecord($id);
     }
 }

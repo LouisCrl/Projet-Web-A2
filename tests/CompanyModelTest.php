@@ -83,10 +83,10 @@ class CompanyModelTest extends TestCase {
         $this->assertEquals($Comp, $this->CompModel->getCompany(6), 'Doesn\'t return the right company.');
     }
 
-    /*public function testDeleteCompany(){
+    public function testDeleteCompany(){
         $this->CompModel->deleteCompany(5);
         $this->assertEquals(4, count($this->CompModel->getAllCompanies()), 'Number of Companies not the expected one.');
         
         $this->assertNull($this->CompModel->getCompany(5), 'The company hasn\'t been deleted.');
-    }*/
+    }
 }

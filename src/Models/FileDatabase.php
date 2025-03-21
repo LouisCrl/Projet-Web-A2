@@ -136,6 +136,33 @@ use App\Models\Database;
         return $record['ID'];
     }
 
+    public function deleteRecord($id){
+        if (!file_exists($this->path) or !is_readable($this->path)) {
+            return false;
+        }
+
+        $file = fopen($this->path, 'r');
+        $tempData = [];
+        $header = fgetcsv($file, 1000, ';');
+
+        while ($row = fgetcsv($file, 1000, ';')){
+            if ($row[0] != $id) {
+                $tempData[] = $row;
+            }
+        }
+        fclose($file);
+
+        $file = fopen($this->path, 'w');
+        fputcsv($file, $header, ';');
+
+        foreach ($tempData as $row) {
+            fputcsv($file, $row, ';');
+        }
+        fclose($file);
+
+        return true;
+    }
+
     /**
      * Updates a record in the database based on its ID.
      * @param int $id The ID of the record to be updated.
