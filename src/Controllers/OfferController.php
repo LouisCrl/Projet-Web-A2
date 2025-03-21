@@ -1,6 +1,10 @@
 <?php
 namespace App\Controllers;
 
+require_once "src/Models/OfferModel.php";
+require_once "src/Controllers/Controller.php";
+
+use App\Controllers\Controller;
 use App\Models\OfferModel;
 
 class OfferController extends Controller {
@@ -62,5 +66,14 @@ class OfferController extends Controller {
         $this->model->deleteOffer($id);
         header('Location: /');
         exit();
+    }
+
+    public function printOffers($num) {
+        $allnum = count($this->model->getAllOffers());
+        $offers = [];
+        for ($i=0; $i<$num; $i++){
+            $offers[] = $this->model->getOffer(rand(1, $allnum));
+        }
+        echo $this->templateEngine->render('acceuil.html', ['offers' => $offers]);
     }
 }

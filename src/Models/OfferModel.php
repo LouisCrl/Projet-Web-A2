@@ -1,6 +1,11 @@
 <?php
 namespace App\Models;
+
 require_once 'src/Models/Model.php';
+require_once 'src/Models/FileDatabase.php';
+
+use App\Models\Model;
+use App\Models\FileDatabase;
 
 class OfferModel extends Model {
     public function __construct($connection = null) {

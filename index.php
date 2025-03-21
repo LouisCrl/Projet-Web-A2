@@ -1,69 +1,34 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TheGoodPlan - Trouvez votre stage</title>
-    <link rel="stylesheet" href="assets/styles.css">
-</head>
+require "vendor/autoload.php";
+//require_once "src/Controllers/CompanyController.php";
+require_once "src/Controllers/OfferController.php";
+//require_once "src/Controllers/UserController.php";
 
-<body>
-<?php include "header.html" ?>
-    <main class="accueil">
-        <h1>Trouvez votre stage facilement !</h1>
-        <div class="barre-recherche">
-            <input type="text" placeholder="Rechercher">
-        </div>
-        <section class="en-vedette">
-            <h2>Offres en vedette</h2>
-        <section class="offres">
-            <a href="details-offre.php">
-            <div class="offre rouge">
-                <div class="offre-head-apercu">
-                    <h4>Développeur FullStack H/F</h2>
-                    <div class="tags">
-                    <span class="localisation fond-rouge"><img src="assets/locIcon.png" width="24px">Paris</span>
-                    <span class="duree fond-rouge"><img src="assets/timeIcon.png" width="24px">6 mois</span>
-                    <span class="exp fond-rouge"><img src="assets/educationIcon.png" width="24px">Bac +2</span>
-                </div>
-                    <h5 class="inter-bold italic">Netflix</h3>
-                    <img class="logo-rouge" src="assets/netflixIcon.png" width="48">
-                </div>
-            </div>
-</a>
-<a href="details-offre.php">
-            <div class="offre jaune">
-                <div class="offre-head-apercu">
-                    <h4>Développeur FullStack H/F</h2>
-                    <div class="tags">
-                    <span class="localisation fond-jaune"><img src="assets/locIcon.png" width="24px">Paris</span>
-                    <span class="duree fond-jaune"><img src="assets/timeIcon.png" width="24px">6 mois</span>
-                    <span class="exp fond-jaune"><img src="assets/educationIcon.png" width="24px">Bac +2</span>
-                </div>
-                    <h5 class="inter-bold italic">McDonalds</h3>
-                    <img class="logo-jaune" src="assets/mcdonaldsIcon.png" width="48">
-                </div>
-            </div>
-</a>
-            <a href="details-offre.php">
-            <div class="offre vert">
-                <div class="offre-head-apercu">
-                    <h4>Développeur FullStack H/F</h2>
-                    <div class="tags">
-                    <span class="localisation fond-vert"><img src="assets/locIcon.png" width="24px">Paris</span>
-                    <span class="duree fond-vert"><img src="assets/timeIcon.png" width="24px">6 mois</span>
-                    <span class="exp fond-vert"><img src="assets/educationIcon.png" width="24px">Bac +2</span>
-                </div>
-                    <h5 class="inter-bold italic">Spotify</h3>
-                    <img class="logo-vert" src="assets/spotifyIcon.webp" width="48">
-                </div>
-            </div>
-</a>
-        </section>
-        </section>
-    </main>
-    <?php include "footer.html" ?>
-</body>
+//use App\Controllers\CompanyController;
+use App\Controllers\OfferController;
+//use App\Controllers\UserController;
 
-</html>
+$loader = new \Twig\Loader\FilesystemLoader('templates');
+$twig = new \Twig\Environment($loader, [
+    'debug' => true
+]);
+
+if (isset($_GET['uri'])) {
+    $uri = $_GET['uri'];
+} else {
+    $uri = '/';
+}
+
+//$CompanyController = new CompanyController($twig);
+$OfferController = new OfferController($twig);
+//$UserController = new UserController($twig);
+
+switch ($uri) {
+    case '/':
+        $OfferController->printOffers(3);
+        break;
+    default:
+        echo 'Page not found';
+        break;
+}
