@@ -31,7 +31,7 @@ use App\Models\Database;
 
         if (!file_exists($this->path)) {
             $file = fopen($this->path, 'w');
-            array_unshift($cols, 'id');
+            array_unshift($cols, 'ID');
             fputcsv($file, $cols);
             fclose($file);
         } else {
@@ -129,11 +129,11 @@ use App\Models\Database;
             return -1;
         }
         $file = fopen($this->path, 'a');
-        $record = array('id' => $this->nextId) + $record;
+        $record = array('ID' => $this->nextId) + $record;
         $this->nextId++;
-        fputcsv($file, $record);
+        fputcsv($file, $record, ';');
         fclose($file);
-        return $record['id'];
+        return $record['ID'];
     }
 
     /**

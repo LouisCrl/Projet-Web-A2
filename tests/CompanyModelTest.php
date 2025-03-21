@@ -1,14 +1,14 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__.'/../../src/Model/Model.php';
-require_once __DIR__.'/../../src/Model/CompanyModel.php';
-use App\Model\CompanyModel;
-use App\Model\Model;
+require_once __DIR__.'/../src/Models/Model.php';
+require_once __DIR__.'/../src/Models/CompanyModel.php';
+use App\Models\CompanyModel;
+use App\Models\Model;
 
 class CompanyModelTest extends TestCase {
     private $CompModel;
-    private $csvFile = __DIR__.'/../../.csv/TestCOMPANIES.csv';
+    private $csvFile = __DIR__.'/../.csv/TestCOMPANIES.csv';
     private $backup;
 
     protected function setUp(): void {
