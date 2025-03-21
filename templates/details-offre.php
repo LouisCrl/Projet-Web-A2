@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheGoodPlan - Détails de l'offre</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
 <?php include "header.html" ?>
@@ -14,7 +14,7 @@
         <h2>Détails de l’offre</h2>
         <h1>Stage en Data Analyse</h1>
         <div class="infos-offre">
-            <img src="assets/airbusIcon.png" alt="Logo Airbus">
+            <img src="/static/airbusIcon.png" alt="Logo Airbus">
             <div>
                 <h3><b>Airbus</b></h3>
                 <p>Grande entreprise • 134 k employés • Aéronautique / Spatial</p>
@@ -23,9 +23,9 @@
         <h4 class="inter-medium">Date de début : Janvier 2025</h5>
         </div>
         <div class="tags horizontal">
-                    <span class="localisation fond-bleu"><img src="assets/locIcon.png" width="24px">Paris</span>
-                    <span class="duree fond-bleu"><img src="assets/timeIcon.png" width="24px">6 mois</span>
-                    <span class="exp fond-bleu"><img src="assets/educationIcon.png" width="24px">Bac +2</span>
+                    <span class="localisation fond-bleu"><img src="/static/locIcon.png" width="24px">Paris</span>
+                    <span class="duree fond-bleu"><img src="/static/timeIcon.png" width="24px">6 mois</span>
+                    <span class="exp fond-bleu"><img src="/static/educationIcon.png" width="24px">Bac +2</span>
                 </div>
         </section>
         <article class="details">
