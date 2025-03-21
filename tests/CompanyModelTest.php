@@ -1,14 +1,14 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__.'/../../src/Model/Model.php';
-require_once __DIR__.'/../../src/Model/CompanyModel.php';
-use App\Model\CompanyModel;
-use App\Model\Model;
+require_once __DIR__.'/../src/Models/Model.php';
+require_once __DIR__.'/../src/Models/CompanyModel.php';
+use App\Models\CompanyModel;
+use App\Models\Model;
 
 class CompanyModelTest extends TestCase {
     private $CompModel;
-    private $csvFile = __DIR__.'/../../.csv/TestCOMPANIES.csv';
+    private $csvFile = __DIR__.'/../.csv/TestCOMPANIES.csv';
     private $backup;
 
     protected function setUp(): void {
@@ -83,10 +83,10 @@ class CompanyModelTest extends TestCase {
         $this->assertEquals($Comp, $this->CompModel->getCompany(6), 'Doesn\'t return the right company.');
     }
 
-    /*public function testDeleteCompany(){
+    public function testDeleteCompany(){
         $this->CompModel->deleteCompany(5);
         $this->assertEquals(4, count($this->CompModel->getAllCompanies()), 'Number of Companies not the expected one.');
         
         $this->assertNull($this->CompModel->getCompany(5), 'The company hasn\'t been deleted.');
-    }*/
+    }
 }

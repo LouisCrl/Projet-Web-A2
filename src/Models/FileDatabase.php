@@ -31,7 +31,7 @@ use App\Models\Database;
 
         if (!file_exists($this->path)) {
             $file = fopen($this->path, 'w');
-            array_unshift($cols, 'id');
+            array_unshift($cols, 'ID');
             fputcsv($file, $cols);
             fclose($file);
         } else {
@@ -129,11 +129,45 @@ use App\Models\Database;
             return -1;
         }
         $file = fopen($this->path, 'a');
-        $record = array('id' => $this->nextId) + $record;
+        $record = array('ID' => $this->nextId) + $record;
         $this->nextId++;
-        fputcsv($file, $record);
+        fputcsv($file, $record, ';');
         fclose($file);
-        return $record['id'];
+        return $record['ID'];
+    }
+
+    /**
+     * Delete a record in the database based on its ID.
+     * @param int $id The ID of the record to be deleted.
+     * @return bool True if the record was deleted successfully, false otherwise.
+     */
+    public function deleteRecord($id){
+        if (!file_exists($this->path) or !is_readable($this->path)) {
+            return false;
+        }
+
+        //Read the csv file to make a list without the line we want to delete
+        $file = fopen($this->path, 'r');
+        $tempData = [];
+        $header = fgetcsv($file, 1000, ';');
+
+        while ($row = fgetcsv($file, 1000, ';')){
+            if ($row[0] != $id) {
+                $tempData[] = $row;
+            }
+        }
+        fclose($file);
+
+        //Write the csv file without the deleted line
+        $file = fopen($this->path, 'w');
+        fputcsv($file, $header, ';');
+
+        foreach ($tempData as $row) {
+            fputcsv($file, $row, ';');
+        }
+        fclose($file);
+
+        return true;
     }
 
     /**
