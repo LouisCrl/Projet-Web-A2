@@ -136,6 +136,11 @@ use App\Models\Database;
         return $record['ID'];
     }
 
+    /**
+     * Delete a record in the database based on its ID.
+     * @param int $id The ID of the record to be deleted.
+     * @return bool True if the record was deleted successfully, false otherwise.
+     */
     public function deleteRecord($id){
         if (!file_exists($this->path) or !is_readable($this->path)) {
             return false;
