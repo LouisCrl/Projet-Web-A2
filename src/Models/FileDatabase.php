@@ -146,6 +146,7 @@ use App\Models\Database;
             return false;
         }
 
+        //Read the csv file to make a list without the line we want to delete
         $file = fopen($this->path, 'r');
         $tempData = [];
         $header = fgetcsv($file, 1000, ';');
@@ -157,6 +158,7 @@ use App\Models\Database;
         }
         fclose($file);
 
+        //Write the csv file without the deleted line
         $file = fopen($this->path, 'w');
         fputcsv($file, $header, ';');
 
